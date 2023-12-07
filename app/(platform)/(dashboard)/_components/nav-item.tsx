@@ -45,17 +45,17 @@ export function NavItem({
     {
       label: "Activity",
       icon: <Activity className="h-4 w-4 mr-2" />,
-      href: `/organizations/${organization.id}/activity`,
+      href: `/organization/${organization.id}/activity`,
     },
     {
       label: "Settings",
       icon: <Settings className="h-4 w-4 mr-2" />,
-      href: `/organizations/${organization.id}/settings`,
+      href: `/organization/${organization.id}/settings`,
     },
     {
       label: "Billing",
       icon: <CreditCard className="h-4 w-4 mr-2" />,
-      href: `/organizations/${organization.id}/billings`,
+      href: `/organization/${organization.id}/billings`,
     },
   ];
 
