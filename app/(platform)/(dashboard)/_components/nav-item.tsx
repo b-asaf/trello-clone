@@ -40,7 +40,7 @@ export function NavItem({
     {
       label: "Boards",
       icon: <Layout className="h-4 w-4 mr-2" />,
-      href: `/organizations/${organization.id}`,
+      href: `/organization/${organization.id}`,
     },
     {
       label: "Activity",
