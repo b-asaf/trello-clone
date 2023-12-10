@@ -10,11 +10,7 @@ export function Info() {
   const { organization, isLoaded } = useOrganization();
 
   if (!isLoaded) {
-    return (
-      <p>
-        <Info.Skeleton />
-      </p>
-    );
+    return <Info.Skeleton />;
   }
 
   return (
