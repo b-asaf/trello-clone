@@ -1,4 +1,5 @@
 import { ClerkProvider } from "@clerk/nextjs";
+import { Toaster } from "sonner";
 
 export default function PlatformLayout({
   children,
@@ -8,6 +9,7 @@ export default function PlatformLayout({
   return (
     <ClerkProvider>
       {/* TODO: implement custom authentication logic */}
+      <Toaster />
       {children}
     </ClerkProvider>
   );
