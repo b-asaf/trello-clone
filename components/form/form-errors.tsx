@@ -3,7 +3,7 @@ import React from "react";
 
 interface FormErrorsProps {
   id: string;
-  errors: Record<string, string[] | undefined>;
+  errors?: Record<string, string[] | undefined>;
 }
 export function FormErrors({ id, errors }: FormErrorsProps) {
   if (!errors) {
