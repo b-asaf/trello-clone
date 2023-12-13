@@ -12,9 +12,9 @@ import { FormInput } from "@/components/form/form-input";
 import { FormSubmit } from "@/components/form/form-submit";
 import { useAction } from "@/hooks/use-action";
 
-import ListWrapper from "./list-wrapper";
+import { ListWrapper } from "./list-wrapper";
 
-export default function ListForms() {
+export function ListForm() {
   const params = useParams();
   const router = useRouter();
 

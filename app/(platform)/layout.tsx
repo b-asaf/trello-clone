@@ -8,7 +8,7 @@ export default function PlatformLayout({
 }) {
   return (
     <ClerkProvider>
-      {/* TODO: implement custom authentication logic */}
+      {/* TODO: implement custom authentication logic in another app */}
       <Toaster />
       {children}
     </ClerkProvider>
