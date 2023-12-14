@@ -13,9 +13,10 @@ import { ListOptions } from "./list-options";
 
 interface ListHeaderProps {
   data: List;
+  onAddCard: () => void;
 }
 
-export function ListHeader({ data }: ListHeaderProps) {
+export function ListHeader({ data, onAddCard }: ListHeaderProps) {
   const formRef = useRef<ElementRef<"form">>(null);
   const inputRef = useRef<ElementRef<"input">>(null);
 
@@ -25,7 +26,6 @@ export function ListHeader({ data }: ListHeaderProps) {
   const enableEditing = () => {
     setIsEditing(true);
     setTimeout(() => {
-      // inputRef.current?.focus();
       inputRef.current?.select();
     });
   };
@@ -91,7 +91,7 @@ export function ListHeader({ data }: ListHeaderProps) {
           {title}
         </div>
       )}
-      <ListOptions onAddCard={() => {}} data={data} />
+      <ListOptions onAddCard={onAddCard} data={data} />
     </div>
   );
 }
