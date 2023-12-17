@@ -32,7 +32,7 @@ export async function GET(
       },
     });
 
-    return NextResponse.json(card);
+    return NextResponse.json(card, { status: 200 });
   } catch (err) {
     return new NextResponse("Internal Server Error", { status: 500 });
   }

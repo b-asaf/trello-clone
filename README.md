@@ -38,6 +38,6 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 ## Prisma tools
 
 1. (SHOULD BE DONE ONLY ON DEV!!) Reset the DB: `npx prisma migrate reset`
-2. push new schema to db: `npx prisma db push`
-3. create the new schema locally: `npx prisma generate`
+2. push new schema(s) to db: `npx prisma db push`
+3. create the new schema(s) locally: `npx prisma generate`
 4. see db content: `npx prisma studio`

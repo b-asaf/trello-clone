@@ -38,6 +38,10 @@ export function Description({ data }: DescriptionProps) {
         queryKey: ["card", data.id],
       });
 
+      queryClient.invalidateQueries({
+        queryKey: ["card-logs", data.id],
+      });
+
       toast.success(`Card ${data.title} updated`);
       setDescription(data.description);
       disableEditing();
