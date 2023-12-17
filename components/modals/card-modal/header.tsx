@@ -20,6 +20,10 @@ export function Header({ data }: HeaderProps) {
   const queryClient = useQueryClient();
   const params = useParams();
 
+  const inputRef = useRef<ElementRef<"input">>(null);
+
+  const [title, setTitle] = useState(data.title);
+
   const { execute } = useAction(updateCard, {
     onSuccess: (data) => {
       queryClient.invalidateQueries({
@@ -33,10 +37,6 @@ export function Header({ data }: HeaderProps) {
       toast.error(error);
     },
   });
-
-  const inputRef = useRef<ElementRef<"input">>(null);
-
-  const [title, setTitle] = useState(data.title);
 
   const onBlur = () => {
     inputRef.current?.form?.requestSubmit();
