@@ -104,7 +104,7 @@ export function FormPicker({ id, errors }: FormPickerProps) {
           </div>
         ))}
       </div>
-      <FormErrors id="Image" errors={errors} />
+      <FormErrors id="image" errors={errors} />
     </div>
   );
 }
