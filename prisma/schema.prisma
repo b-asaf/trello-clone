@@ -50,7 +50,7 @@ model Card {
   description String? @db.Text
 
   listId      String
-  list        List  @relation(fields: [listId], references: [id], onDelete: Cascade)
+  list        List @relation(fields: [listId], references: [id], onDelete: Cascade)
 
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
@@ -71,7 +71,7 @@ enum ENTITY_TYPE {
 }
 
 model AuditLog {
-  id          String  @id @default(uuid())
+  id          String @id @default(uuid())
   orgId       String
   entityId    String
   action      ACTION
@@ -82,5 +82,14 @@ model AuditLog {
   userName    String @db.Text
 
   createdAt   DateTime @default(now())
-  updatedAt   DateTime  @updatedAt
+  updatedAt   DateTime @updatedAt
+}
+
+model OrgLimit {
+  id          String @id @default(uuid())
+  orgId       String @unique
+  count       Int @default(0)
+
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 }
