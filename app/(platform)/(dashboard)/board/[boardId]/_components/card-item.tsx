@@ -3,7 +3,7 @@
 import { Draggable } from "@hello-pangea/dnd";
 
 import { Card } from "@prisma/client";
-import { Provider } from "@radix-ui/react-tooltip";
+import { useCardModal } from "@/hooks/use-card-modal";
 
 interface CardItemProps {
   data: Card;
@@ -11,6 +11,8 @@ interface CardItemProps {
 }
 
 export function CardItem({ data, index }: CardItemProps) {
+  const cardModal = useCardModal();
+
   return (
     <Draggable draggableId={data.id} index={index}>
       {(provided) => (
@@ -19,6 +21,7 @@ export function CardItem({ data, index }: CardItemProps) {
           {...provided.dragHandleProps}
           ref={provided.innerRef}
           role="button"
+          onClick={() => cardModal.onOpen(data.id)}
           className="truncate border-2 border-transparent hover:border-black py-2 px-3 text-sm bg-white rounded-md shadow-sm"
         >
           {data.title}
