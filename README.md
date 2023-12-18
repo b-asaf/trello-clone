@@ -41,3 +41,22 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 2. push new schema(s) to db: `npx prisma db push`
 3. create the new schema(s) locally: `npx prisma generate`
 4. see db content: `npx prisma studio`
+
+### STRIPE
+
+In order to use/test stripe locally, you need to following:
+
+1. Login into [stripe.com](https://stripe.com/)
+2. Go to dashboards and click the `developers` buttons
+3. Click on webhooks tab
+4. Click on "Test in local environment": `https://dashboard.stripe.com/test/webhooks/create?endpoint_location=local`
+5. Follow the instructions...**make sure** to keep the terminal open/running
+6. enter fake credit card information:
+   1. the important fake information is the credit card number: 4242 4242 4242 4242
+   2. the rest of the information is not really important for the testing purposes
+
+Enabling billing portal (in development mode):
+
+1. Search for `billing portal`
+2. Select `Customer portal` (should be under: Settings -> Customer portal)
+3. Click on `activate test link` button

@@ -11,7 +11,8 @@ import { createSafeAction } from "@/lib/create-safe-action";
 import { InputType, ReturnType } from "./types";
 import { CopyCard } from "./schema";
 
-const handler = async (data: InputType): Promise<ReturnType> => {
+async function handler(data: InputType): Promise<ReturnType> {
+  // const handler = async (data: InputType): Promise<ReturnType> => {
   const { userId, orgId } = auth();
 
   if (!userId || !orgId) {
@@ -59,6 +60,6 @@ const handler = async (data: InputType): Promise<ReturnType> => {
 
   revalidatePath(`/board/${boardId}`);
   return { data: card };
-};
+}
 
 export const copyCard = createSafeAction(CopyCard, handler);
