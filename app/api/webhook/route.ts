@@ -11,6 +11,7 @@ export async function POST(req: Request) {
 
   let event: Stripe.Event;
 
+  // happen after valid credit card was entered
   try {
     event = stripe.webhooks.constructEvent(
       body,
@@ -23,6 +24,7 @@ export async function POST(req: Request) {
 
   const session = event.data.object as Stripe.Checkout.Session;
 
+  // creating a subscription for specific organization based on orgId for the 1st time
   if (event.type === "checkout.session.completed") {
     const subscription = await stripe.subscriptions.retrieve(
       session.subscription as string
@@ -45,7 +47,7 @@ export async function POST(req: Request) {
     });
   }
 
-  // renewal the subscription successfully
+  // renewal the subscription completed successfully
   if (event.type === "invoice.payment_succeeded") {
     const subscription = await stripe.subscriptions.retrieve(
       session.subscription as string

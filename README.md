@@ -42,7 +42,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 3. create the new schema(s) locally: `npx prisma generate`
 4. see db content: `npx prisma studio`
 
-### STRIPE
+## STRIPE
 
 In order to use/test stripe locally, you need to following:
 
