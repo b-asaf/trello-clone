@@ -21,13 +21,9 @@ bun dev
 ### environment variables:
 
 1. change `.env-example` to `.env`
-2. fill the relevant environment variables
+2. fill the relevant environment variables - for each site (clerk, unsplash, stripe)follow site guidelines
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
 ### Tools
 
@@ -37,6 +33,7 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
       - Prisma as ORM
    2. database hosting [filess.io](https://dash.filess.io/#/app/databases)
       - initial worked with MySQL in docker -> due to issues with deploying db host in Vercel moved to filess.io
+   - during development the DB was deployed inside a docker (see docket-compose.yml), due to issues with deploying the db in vercel host I moved to filess.io as db host.
 2. Authentication - [clerk](https://clerk.com/solutions/nextjs-authentication)
 3. Style - tailwind.css
 4. [shadcn-ui](https://ui.shadcn.com/docs) - Re-usable components above radix-ui & tailwind.css
