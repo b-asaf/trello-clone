@@ -4,6 +4,8 @@ import "./globals.css";
 
 import { siteConfig } from "@/config/site";
 
+import Providers from "./providers";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -23,8 +25,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    // suppressHydrationWarning- https://react.dev/reference/react-dom/components/common#common-props
+    <html lang="en" suppressHydrationWarning>
+      <body className={inter.className}>
+        {/* wrapping with client component won't make all the components client components -
+            https://nextjs.org/docs/app/building-your-application/rendering/composition-patterns */}
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }

@@ -7,13 +7,11 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prisma:db": "npx prisma generate",
-    "prisma:db:update": "npx prisma db push",
-    "prisma:client": "npx prisma studio",
     "postinstall": "prisma generate"
   },
   "dependencies": {
     "@clerk/nextjs": "^4.27.4",
+    "@clerk/themes": "^1.7.9",
     "@hello-pangea/dnd": "^16.5.0",
     "@prisma/client": "^5.7.0",
     "@radix-ui/react-accordion": "^1.1.2",
@@ -31,6 +29,7 @@
     "lodash": "^4.17.21",
     "lucide-react": "^0.294.0",
     "next": "14.0.3",
+    "next-themes": "^0.2.1",
     "react": "^18",
     "react-dom": "^18",
     "sonner": "^1.2.4",

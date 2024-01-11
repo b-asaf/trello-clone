@@ -1,14 +1,21 @@
+"use client";
+
+import { useTheme } from "next-themes";
 import { OrganizationSwitcher, UserButton } from "@clerk/nextjs";
+import { dark } from "@clerk/themes";
 import { Plus } from "lucide-react";
 
 import Logo from "@/components/logo";
 import { Button } from "@/components/ui/button";
 import { FormPopover } from "@/components/form/form-popover";
+import { ThemeSwitch } from "@/components/theme-switch";
 import MobileSidebar from "./mobile-sidebar";
 
 export default function Navbar() {
+  const { resolvedTheme } = useTheme();
+
   return (
-    <nav className="fix top-0 z-50 w-full px-4 h-14 border-b shadow-sm bg-white flex items-center">
+    <nav className="fix top-0 z-50 w-full px-4 h-14 border-b shadow-sm flex items-center">
       <MobileSidebar />
       <div className="flex items-center gap-x-4">
         <div className="hidden md:flex">
@@ -40,6 +47,7 @@ export default function Navbar() {
           afterSelectOrganizationUrl="/organization/:id"
           afterLeaveOrganizationUrl="/select-org"
           appearance={{
+            baseTheme: resolvedTheme === "dark" ? dark : undefined,
             elements: {
               rootBox: {
                 display: "flex",
@@ -51,8 +59,12 @@ export default function Navbar() {
         />
         <UserButton
           afterSignOutUrl="/"
-          appearance={{ elements: { avatarBox: { height: 30, width: 30 } } }}
+          appearance={{
+            baseTheme: resolvedTheme === "dark" ? dark : undefined,
+            elements: { avatarBox: { height: 30, width: 30 } },
+          }}
         />
+        <ThemeSwitch />
       </div>
     </nav>
   );

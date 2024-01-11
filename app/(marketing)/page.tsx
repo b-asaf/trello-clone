@@ -17,7 +17,7 @@ const textFont = Poppins({
 
 export default function MarketingPage() {
   return (
-    <div className="flex items-center justify-center flex-col">
+    <div className="flex items-center justify-center flex-col mb-2">
       <div
         className={cn(
           "flex items-center justify-center flex-col",
